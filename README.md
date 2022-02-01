@@ -33,9 +33,7 @@
 ## Config
 ```
 ---
----
 ui: true #if false the information will send with the message form, if true the information will send with the ui form.
-...
 ...
 ```
 

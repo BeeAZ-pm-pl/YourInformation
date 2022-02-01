@@ -19,31 +19,23 @@
 ## Commands
 | **Commands** | **Description** |
 | --- | --- |
-| **/hitparticle** | **Turn hit particles on or off** |
+| **/myinfo** | **Display the term information in the server** |
 
 <br>
 
 ## Permissions
 | **Permission** | **Default** |
 | --- | --- |
-| **hitparticle.command** | **op** |
+| **yourinformation.command.use** | **true** |
 	
 <br>
 
 ## Config
 ```
 ---
-#Config Enable Particles
-#True is on, false is off
-#More particle in next version
-
-HeartParticle: true
-InkParticle: false
-LavaParticle: false
-FlameParticle: false
-SmokeParticle: false
-WaterParticle: false
-active: true
+---
+ui: true #if false the information will send with the message form, if true the information will send with the ui form.
+...
 ...
 ```
 
@@ -51,5 +43,5 @@ active: true
 
 ## Install
 - Step 1: Click the "Direct Download" button to download the plugin
-- Step 2: move the file "HitParticle.phar" into the file "plugins"
+- Step 2: move the file "YourInformation.phar" into the file "plugins"
 - Step 3: Restart server for plugins to work

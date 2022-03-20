@@ -46,7 +46,7 @@ class YourInformationCommand extends Command implements PluginOwned{
     $this->setPermission("yourinformation.command.use");
   }
   
-  public function execute(CommandSender $player, String $label, array $args): bool{
+  public function execute(CommandSender $player, string $label, array $args): bool{
     if($this->testPermission($player)){
     if($player instanceof Player){
     switch($this->main->getConfig()->get("ui")){
@@ -60,8 +60,9 @@ class YourInformationCommand extends Command implements PluginOwned{
     $death = $this->main->info->getNested($player->getName() . ".death");
     $sneak = $this->main->info->getNested($player->getName() . ".sneak");
     $jump = $this->main->info->getNested($player->getName() . ".jump");
+    $break = $this->main->info->getNested($player->getName() . ".break");
     $player->sendMessage("§a======= §eYOUR INFORMATION §a=======");
-    $player->sendMessage("§7> Name: " . $player->getName() . "\n§7> Join: " . $join . "\n§7> Kill: " . $kill . "\n§7> Death: " . $death . "\n§7> Sneak: " . $sneak . "\n§7> Jump: " . $jump . "\n§a==============");
+    $player->sendMessage("§7> Name: " . $player->getName() . "\n§7> Join: " . $join . "\n§7> Kill: " . $kill . "\n§7> Death: " . $death . "\n§7> Sneak: " . $sneak . "\n§7> Jump: " . $jump . "\n§7> BreakBlock: ".$break."\n§a==============");
     break;
     }
     }else{
@@ -83,8 +84,9 @@ class YourInformationCommand extends Command implements PluginOwned{
     $death = $this->main->info->getNested($player->getName() . ".death");
     $sneak = $this->main->info->getNested($player->getName() . ".sneak");
     $jump = $this->main->info->getNested($player->getName() . ".jump");
+    $break = $this->main->info->getNested($player->getName() . ".break");
     $form->setTitle("§a======= §eYOUR INFORMATION §a=======");
-    $form->addLabel("§7> Name: " . $player->getName() . "\n§7> Join: " . $join . "\n§7> Kill: " . $kill . "\n§7> Death: " . $death . "\n§7> Sneak: " . $sneak . "\n§7> Jump: " . $jump . "\n§a==============");
+    $form->addLabel("§7> Name: " . $player->getName() . "\n§7> Join: " . $join . "\n§7> Kill: " . $kill . "\n§7> Death: " . $death . "\n§7> Sneak: " . $sneak . "\n§7> Jump: " . $jump . "\n§7> BreakBlock: ".$break."\n§a==============");
     $form->sendToPlayer($player);
     return $form;
   }

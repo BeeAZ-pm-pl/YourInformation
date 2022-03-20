@@ -1,7 +1,7 @@
 name: YourInformation
 main: lenlenlL6\yourinformation\YourInformation
 api: 4.0.0
-version: 1.0.0
+version: 1.0.1
 
 permissions:
  yourinformation.command.use:

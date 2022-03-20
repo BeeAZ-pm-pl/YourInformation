@@ -1,5 +1,5 @@
 <div align="center">
-<h1>YourInformation | v1.0.0<h1>
+<h1>YourInformation | v1.0.1<h1>
 </div>
 <p align="center">
 <a href="https://poggit.pmmp.io/p/YourInformation"><img src="https://poggit.pmmp.io/shield.state/YourInformation">

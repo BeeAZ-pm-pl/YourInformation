@@ -35,6 +35,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerJumpEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\block\BlockBreakEvent;
 use lenlenlL6\yourinformation\YourInformation;
 
 class EventListener implements Listener{
@@ -54,6 +55,7 @@ class EventListener implements Listener{
       $this->main->info->setNested($player->getName() . ".death", 0);
       $this->main->info->setNested($player->getName() . ".sneak", 0);
       $this->main->info->setNested($player->getName() . ".jump", 0);
+      $this->main->info->setNested($player->getName() . ".break", 0);
       $this->main->info->save();
     }else{
       $this->main->info->setNested($player->getName() . ".join", ($this->main->info->getNested($player->getName() . ".join") + 1));
@@ -66,7 +68,13 @@ class EventListener implements Listener{
     $this->main->info->setNested($player->getName() . ".death", ($this->main->info->getNested($player->getName() . ".death") + 1));
     $this->main->info->save();
   }
-  
+  public function onBreak(BlockBreakEvent $event){
+    $player = $event->getPlayer();
+    if(!$event->isCancelled()){
+    $this->main->info->setNested($player->getName() . ".break", ($this->main->info->getNested($player->getName(). ".break") + 1));
+    $this->main->info->save();
+}
+}
   public function onSneak(PlayerToggleSneakEvent $event){
     $player = $event->getPlayer();
     if(!$event->isCancelled()){

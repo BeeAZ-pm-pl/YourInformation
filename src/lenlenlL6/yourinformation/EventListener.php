@@ -41,7 +41,7 @@ use lenlenlL6\yourinformation\YourInformation;
 class EventListener implements Listener{
   
   /**@var YourInformation $main */
-  private $main;
+  protected $main;
   
   public function __construct(YourInformation $main){
     $this->main = $main;

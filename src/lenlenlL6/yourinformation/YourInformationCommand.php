@@ -38,11 +38,11 @@ use lenlenlL6\yourinformation\libs\jojoe77777\FormAPI\CustomForm;
 class YourInformationCommand extends Command implements PluginOwned{
   
   /**@var YourInformation $main*/
-  private $main;
+  protected $main;
   
   public function __construct(YourInformation $main){
     $this->main = $main;
-    parent::__construct("myinfo", "Display the term information in the server", null, ["myinfo"]);
+    parent::__construct("myinfo", "Display the term information in the server", null, ["myinfo", "info", "yourinfo"]);
     $this->setPermission("yourinformation.command.use");
   }
   

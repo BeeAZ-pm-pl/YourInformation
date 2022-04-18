@@ -35,7 +35,7 @@ use lenlenlL6\yourinformation\YourInformationCommand;
 class YourInformation extends PluginBase{
   
   /** @var Config $info */
-  public $info;
+  protected $info;
   
   public function onEnable() : void{
      $this->saveDefaultConfig();
